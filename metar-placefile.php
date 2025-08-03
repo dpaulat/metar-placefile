@@ -302,7 +302,7 @@ function pick_wind_icon($speed) {
 	# return icon number based on speed in 5mph chunks using https://www.weather.gov/hfo/windbarbinfo
 	# as a guide.for windbarbs_75_new.png image
 	
-	static $barbs = array(2,8,14,20,25,31,37,43,60,66,71,77,83,89,94,100,112,117/*,123*/); #in MPH
+	#static $barbs = array(2,8,14,20,25,31,37,43,60,66,71,77,83,89,94,100,112,117/*,123*/); #in MPH
 	static $barbs = array(2,7,12,17,22,27,32,37,52,47,52,57,62,67,77,82,87,92,97,102); # in KTS
 	if($speed > 117) {return(17);}
 	for ($i=0;$i<count($barbs);$i++){
@@ -439,7 +439,7 @@ function gen_popup($M) {
     /*:: :*/
     /*:: Official Web site: http://www.zipcodeworld.com :*/
     /*:: :*/
-    /*:: Hexa Software Development Center © All Rights Reserved 2004:*/
+    /*:: Hexa Software Development Center ï¿½ All Rights Reserved 2004:*/
     /*:: :*/
     /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
   function GML_distance($lat1, $lon1, $lat2, $lon2) { 
