@@ -147,7 +147,7 @@ if(strlen($rawHTML) < 2000 ){
 foreach ($recs as $i => $rec) {
 	if(strlen($rec) < 100) {continue;}
 	#if(substr($rec,0,1) == '"') {
-		$vals = str_getcsv($rec); 
+		$vals = str_getcsv($rec, escape: '\\'); # split up CSV record with proper handling of embedded commas
 		#$Debug .= "<!-- rec $i has embedded commas for '".$vals[0]."'... reprocessing -->\n";
 		$vals[0] = str_replace(',','',$vals[0]); # remove commas in raw metar.
     $vals[0] = str_replace(array('METAR ','SPECI '),array('',''),$vals[0]);
@@ -312,7 +312,7 @@ offset	data	Convert	Key	sample
 
 */
 	$M = array();
-	$V = str_getcsv($data); // split up CSV record
+	$V = str_getcsv($data, escape: '\\'); // split up CSV record with proper handling of embedded commas
 	if(count($V) != 44) {
 		$Debug .= "<!-- malformed record '".$V[0]."' with ".count($V)." fields rejected. -->\n";
 		return($M);
